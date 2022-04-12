@@ -1,5 +1,6 @@
 package jpabook.jpabookstore;
 
+import jpabook.jpabookstore.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,8 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
-
-import static org.junit.Assert.*;
 
 
 @RunWith(SpringRunner.class)
@@ -26,7 +25,7 @@ public class MemberRepositoryTest {
     public void testMember() throws Exception{
         //given
         Member member = new Member();
-        member.setUserName("테스트1");
+        member.setName("테스트1");
 
         //when
         Long saveId = memberRepository.save(member);
@@ -34,7 +33,7 @@ public class MemberRepositoryTest {
 
         //then
         Assertions.assertThat(saveId).isEqualTo(findMember.getId());
-        Assertions.assertThat(member.getUserName()).isEqualTo(findMember.getUserName());
+        Assertions.assertThat(member.getName()).isEqualTo(findMember.getName());
 
 
     }
