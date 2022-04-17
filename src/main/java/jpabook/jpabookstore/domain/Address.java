@@ -1,15 +1,21 @@
 package jpabook.jpabookstore.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Embeddable;
 
 @Embeddable
-@Getter @Setter
+@Getter
+@NoArgsConstructor
 public class Address {
 
-    protected Address() {}
+    public Address(String city, String street, String zipCode) {
+        this.city = city;
+        this.street = street;
+        this.zipCode = zipCode;
+    }
 
     private String city;
     private String street;

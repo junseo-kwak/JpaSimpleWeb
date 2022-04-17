@@ -19,7 +19,7 @@ public class Delivery {
     private Orders order;
 
     @Enumerated(EnumType.STRING)
-    private DeliveryStatus deliveryStatus;
+    private DeliveryStatus status;
 
 
 
