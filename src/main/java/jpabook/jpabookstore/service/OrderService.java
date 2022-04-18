@@ -61,6 +61,6 @@ public class OrderService {
      */
 
     public List<Orders> findOrders(OrderSearch orderSearch){
-        return orderRepository.findAllByCriteria(orderSearch);
+        return orderRepository.findAllByString(orderSearch);
     }
 }
